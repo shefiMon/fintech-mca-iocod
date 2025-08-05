@@ -34,8 +34,8 @@ class MerchantController extends Controller
             $file = $request->file('file');
 
             $fileName = time() . '_' . $merchantId . '_' . $file->getClientOriginalName();
-            $filePath = FundingHelper::storeFile($file, 'bank-statements', $fileName);
 
+            $filePath = FundingHelper::storeFile($file, 'bank-statements', $fileName);
             // Create bank statement record
             $bankStatement = BankStatement::create([
                 'merchant_id' => $merchant->id,

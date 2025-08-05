@@ -27,7 +27,7 @@ class AssignDealsJob implements ShouldQueue
      */
     public function handle(): void
     {
-          $query = Lead::where('status', Lead::STATUS_PENDING)
+         Lead::where('status', Lead::STATUS_PENDING)
                 ->where('lead_score', '>=', 80)->chunk(100, function ($leads) {
                     foreach ($leads as $lead) {
                         $this->assignLeadToInvestor($lead);

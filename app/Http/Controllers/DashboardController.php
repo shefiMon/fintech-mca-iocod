@@ -44,7 +44,7 @@ class DashboardController extends Controller
                     'funding' => [
                         'total_requested' => (float) $summary->total_requested_amount,
                         'total_funded' => (float) $summary->total_funded_amount,
-                        'funding_ratio' => FundingHelper::calculateFundingRatio($summary->total_requested_amount, $summary->total_funded_amount)
+                        'funding_ratio' => FundingHelper::calculateFundingRatio($summary->total_requested_amount ?? 0, $summary->total_funded_amount ?? 0) . '%'
                     ]
                 ]
             ]);

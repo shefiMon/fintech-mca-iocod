@@ -14,7 +14,7 @@ class FundingHelper
         return round(($totalFunding/$requestedAmount ) * 100, 2);
     }
 
-    public static function parseCsvBankStatement(string $filePath): array
+    public static function parseCsv(string $filePath): array
     {
         $data = [];
         $handle = fopen($filePath, 'r');
