@@ -24,7 +24,7 @@ class ImportLeadsAction
                         'requested_amount' => $leadData['requested_amount'],
                     ],[
                         'merchant_name' => $leadData['merchant_name'],
-                        'lead_score' => rand(60, 100), // Random score for demo
+                        'lead_score' => rand(75, 100), // Random score for demo
                         'status' => Lead::STATUS_PENDING,
                     ]);
 
