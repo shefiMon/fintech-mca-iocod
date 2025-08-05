@@ -120,13 +120,3 @@ year: 2024
 
 * [Postman API Documentation](https://documenter.getpostman.com/view/22975549/2sB3BBqXhJ)
 
-# Edit your .env file with your database credentials:
-
-```env
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=lead_management
-DB_USERNAME=your_username
-DB_PASSWORD=your_password
-```
