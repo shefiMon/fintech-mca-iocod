@@ -82,6 +82,22 @@ php php artisan fund:deals
 
 ### API Endpoints
 
+#### Auth
+```bash
+
+# Login:
+POST /api/auth/login
+
+SAMPLE USER 
+{
+    "email" : "test@example.com",
+    "password":"password"
+}
+
+```
+
+
+
 #### Dashboard Summary
 
 ```bash
@@ -103,3 +119,14 @@ year: 2024
 ## Documentation 
 
 * [Postman API Documentation](https://documenter.getpostman.com/view/22975549/2sB3BBqXhJ)
+
+# Edit your .env file with your database credentials:
+
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=lead_management
+DB_USERNAME=your_username
+DB_PASSWORD=your_password
+```
