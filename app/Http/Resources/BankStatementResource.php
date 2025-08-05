@@ -14,6 +14,12 @@ class BankStatementResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        return parent::toArray($request);
+       return [
+            'id' => $this->id,
+            'file_name' => $this->file_name,
+            'file_type' => $this->file_type,
+            'status' => $this->status,
+            'download_url' => asset('storage/' . $this->file_path),
+        ];
     }
 }

@@ -17,6 +17,7 @@ class BankStatement extends Model
         'status'
     ];
 
+    public const STATUS_UPLOADED = 'UPLOADED';
     protected $casts = [
         'total_credits' => 'decimal:2',
         'total_debits' => 'decimal:2',

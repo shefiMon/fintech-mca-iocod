@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Helpers\FundingHelper;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -28,10 +29,13 @@ class ApiAuthController extends Controller
             $user = Auth::user();
             $token = $user->createToken('auth_token')->plainTextToken;
 
-            return response()->json(['success'=>true,'user'=>$user,'token' => $token]);
+            return FundingHelper::respondSuccess([
+                'user' => $user,
+                'token' => $token
+            ], 'Login successful');
         }
 
-        return response()->json(['error' => 'Unauthorized'], Response::HTTP_UNAUTHORIZED);
+        return FundingHelper::respondError('Unauthorized', 'Login failed', Response::HTTP_UNAUTHORIZED);
     }
 
     public function destroy(Request $request)
@@ -39,7 +43,7 @@ class ApiAuthController extends Controller
         $user = $request->user();
         $user->tokens()->delete();
 
-        return response()->json(['success' => true]);
+        return FundingHelper::respondSuccess([], 'Logout successful');
     }
 
 }
